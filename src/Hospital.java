@@ -13,9 +13,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date: 2020年02月02日 20:58
  */
 public class Hospital extends Point {
+	//starting x and y point
     public static final int HOSPITAL_X = 720;
     public static final int HOSPITAL_Y = 80;
+
     private int width;
+    //the height is just the visual effect, make it larger has no effect
     private int height = 600;
 
     public int getWidth() {
@@ -61,6 +64,7 @@ public class Hospital extends Point {
         //根据第一个床位坐标初始化其他床位的坐标
         for (int i = 0; i < column; i++) {
 
+        	//since the max is 606, so the max beds for the height is 100
             for (int j = 10; j <= 606; j += 6) {
 
                 Bed bed = new Bed(point.getX() + i * 6, point.getY() + j);
